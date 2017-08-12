@@ -7,16 +7,12 @@
             <h1><a href="">Kino z Karolą</a></h1>
         </div>
 
-        <div>
-            <p>published: 11.08.2017, 23:57</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Pada deszcz i grzmi. Idzie burze</p>
-        </div>
-
-        <div>
-            <p>published 12.08.2017, 00:01</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Nadal pada i jest burza</p>
-        </div>
+        {%for post in posts %}
+          <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+        {% endfor %}
     </body>
 </html>
